@@ -5,11 +5,17 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: ''
+    name: ""
     namespace: demo-secrets
     server: https://kubernetes.default.svc
   project: default
   source:
+    #plugin:
+    #  env:
+    #    - name: AVP_TYPE
+    #      value: vault
+    #    - name: AVP_AUTH_TYPE
+    #      value: token
     path: secrets
     repoURL: https://github.com/herveleclerc/argocd-vault-plugin-demo.git
     targetRevision: HEAD
